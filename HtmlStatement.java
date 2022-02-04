@@ -12,19 +12,19 @@ public class HtmlStatement extends Statement {
       //add footer lines
       return result + formatFooter(aCustomer.getTotalCharge(),aCustomer.getTotalFrequentRenterPoints());
    }
-   private String getHeader(String name)
+   protected String getHeader(String name)
    {
      return "<H1>Rentals for <EM>" + name +
       "</EM></H1><P>\n";
    }
 
-   private String addRental(Rental each)
+   protected String addRental(Rental each)
    {
      return each.getMovie().getTitle()+ ": " +
          String.valueOf(each.getCharge()) + "<BR>\n";
    }
 
-   private String formatFooter(double charge, double points)
+   protected String formatFooter(double charge, double points)
    {
      return "<P>You owe <EM>" +
       String.valueOf(charge) + "</EM><P>\n"+
